@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <audio id="bg-music" autoplay loop>
+    <audio id="bg-music" loop>
       <source src="void-wiki-background.mp3" type="audio/mpeg" />
     </audio>
     <button
@@ -34,17 +34,26 @@
       🔊
     </button>
     <script>
-      const audio = document.getElementById("bg-music");
-      const btn = document.getElementById("mute-btn");
-      function updateBtn() {
-        btn.textContent = audio.muted ? "🔇" : "🔊";
-      }
-      btn.onclick = function () {
-        audio.muted = !audio.muted;
-        updateBtn();
-      };
-      // Set initial state
-      updateBtn();
+  const audio = document.getElementById("bg-music");
+  const muteBtn = document.getElementById("mute-btn");
+  const playBtn = document.getElementById("play-music-btn");
+  function updateBtn() {
+    muteBtn.textContent = audio.muted ? "🔇" : "🔊";
+  }
+  muteBtn.onclick = function () {
+    audio.muted = !audio.muted;
+    updateBtn();
+  };
+  if (playBtn) {
+    playBtn.onclick = function () {
+      audio.muted = false;
+      audio.play();
+      playBtn.style.display = "none";
+    };
+  }
+  // Set initial state
+  updateBtn();
+</script>
     </script>
     <header>
       <img
@@ -53,6 +62,7 @@
         style="max-height: 220px; filter: drop-shadow(0 0 10px #e53935)"
       />
       <h1>Voidexpunged</h1>
+      <button id="play-music-btn" class="play-music-btn">Play Music</button>
       <p>The Vast Wikipedia of the Enigmatic Entity</p>
     </header>
     <nav>
