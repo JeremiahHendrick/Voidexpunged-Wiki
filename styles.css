@@ -1,3 +1,19 @@
+/* Play Music button style */
+.play-music-btn {
+  margin-bottom: 0.7rem;
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  background: #222;
+  color: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.play-music-btn:hover {
+  background: #e53935;
+  color: #fff;
+}
 body {
   background-color: #000;
   color: #eee;
@@ -126,4 +142,20 @@ footer {
     margin: 0 auto 1.5rem auto;
     display: block;
   }
+}
+
+.play-music-btn {
+  margin-bottom: 0.7rem;
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  background: #222;
+  color: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.play-music-btn:hover {
+  background: #e53935;
+  color: #fff;
 }
